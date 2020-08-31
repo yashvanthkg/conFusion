@@ -39,8 +39,12 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm align-self-center">
+                <div class="col-12 col-sm-3 align-self-center">
                     <img src="img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-xs-12 col-sm-3 align-self-center">
+                    <a href="#reserve-form"  role="button" class="btn btn-block  btn-warning">
+                        Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -71,8 +75,14 @@
                 <h3>This Month's Promotions</h3>
             </div>
             <div class="col col-sm col-md">
-                <h2>Weekend Grand Buffet</h2>
-                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                        <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main
+                            entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail align-self-end" src="img/buffet.png" alt="grandbuffet">
+                </div>
             </div>
         </div>
 
@@ -92,6 +102,40 @@
                             creating mouthwatering Indo-Italian fusion experiences.
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-12 col-sm-8 offset-sm-2">
+                <h3 class="card-header bg-warning reserve text-white">Reserve a Table</h3>
+                <div class="card-body">
+                    <form id="reserve-form">
+                        <dl class="row">
+                            <dt class="col-2">Number of Guests</dt>
+                            <dd class="col-1"><input type="radio" name="select" id="one" value="1"><label for="one">1</label>
+                            </dd>
+                            <dd class="col-1"><input type="radio" name="select" id="two" value="2"><label for="two">2</label>
+                            </dd>
+                            <dd class="col-1"><input type="radio" name="select" id="thr" value="3"><label for="thr">3</label>
+                            </dd>
+                            <dd class="col-1"><input type="radio" name="select" id="four" value="4"><label for="four">4</label>
+                            </dd>
+                            <dd class="col-1"><input type="radio" name="select" id="five" value="5"><label for="five">5</label>
+                            </dd>
+                            <dd class="col-1"><input type="radio" name="select" id="six" value="6"><label for="six">6</label>
+                            </dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-12 col-md-3">Date and Time</dt>
+                            <dd class="col-12 col-md-4"><input type="date" placeholder="Date"></dd>
+                            <dd class="col-12 col-md-4"><input type="time" placeholder="Time"></dd>
+                        </dl>
+                        <div class="col-md-9 offset-md-3">
+                            <button type="submit" class="btn btn-primary">
+                                Reserve
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
