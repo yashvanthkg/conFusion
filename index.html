@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <ol class="carousel-indicators">
-                        <li class="active" data-target="#carousel" data-slide-to="0"></li>
+                        <li class="active" data-target="#mycarousel" data-slide-to="0"></li>
                         <li data-target="#mycarousel" data-slide-to="1"></li>
                         <li data-target="#mycarousel" data-slide-to="2"></li>
                     </ol>
@@ -142,14 +142,9 @@
                     <a href="#mycarousel" class="carousel-control-next" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-sm btn-danger" type="button" id="carousel-pause">
-                            <span class="fa fa-pause"></span>
-                        </button>
-                        <button class="btn btn-sm btn-danger" type="button" id="carousel-play">
-                            <span class="fa fa-play"></span>
-                        </button>
-                    </div>
+                    <button class="btn btn-sm btn-danger" type="button" id="carouselButton">
+                        <span class="fa fa-pause"></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -310,14 +305,20 @@
     <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        $().ready(function() {
+        $(function() {
             $('#mycarousel').carousel({interval:2000});
-            $('#carousel-pause').click(function() {
-                $('#mycarousel').carousel('pause');
+            $('#carouselButton').click(function() {
+                if($('#carouselButton').children('span').hasClass('fa-pause')) {
+                    $('#mycarousel').carousel('pause');
+                    $('#carouselButton').children('span').removeClass('fa-pause');
+                    $('#carouselButton').children('span').addClass('fa-play');
+                }
+                else {
+                    $('#mycarousel').carousel('cycle');
+                    $('#carouselButton').children('span').removeClass('fa-play');
+                    $('#carouselButton').children('span').addClass('fa-pause');
+                }
             });
-            $('#carousel-play').click(function() {
-                $('#mycarousel').carousel('cycle')
-            })
         })
     </script>
 </body>
